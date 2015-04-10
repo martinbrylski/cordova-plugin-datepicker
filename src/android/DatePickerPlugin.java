@@ -1,7 +1,7 @@
 /**
- * @author Bikas Vaibhav (http://bikasv.com) 2013
- * Rewrote the plug-in at https://github.com/phonegap/phonegap-plugins/tree/master/Android/DatePicker
- * It can now accept `min` and `max` dates for DatePicker.
+ * @author Martin Brylski
+ * Rewrote the plug-in at https://github.com/VitaliiBlagodir/cordova-plugin-datepicker
+ * It now utilizes 24h hours format
  */
 
 package com.plugin.datepicker;
@@ -61,8 +61,9 @@ public class DatePickerPlugin extends CordovaPlugin {
 		final Runnable runnable;
 		String action = "date";
 		String clearText = "Clear";
+		boolean is24HourView = true;
 	
-		long minDateLong = 0, maxDateLong = 0;
+		long minDate = 0, maxDate = 0;
 		
 		int month = -1, day = -1, year = -1, hour = -1, min = -1;
 		try {
@@ -78,11 +79,11 @@ public class DatePickerPlugin extends CordovaPlugin {
 			hour = Integer.parseInt(datePart[3]);
 			min = Integer.parseInt(datePart[4]);
 
-			minDateLong = obj.getLong("minDate");
-			maxDateLong = obj.getLong("maxDate");
+			minDate = obj.getLong("minDate");
+			maxDate = obj.getLong("maxDate");
 
-	
-
+			clearText = obj.getString("clearText");
+			is24HourView = obj.getBoolean("is24HourView");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -94,25 +95,19 @@ public class DatePickerPlugin extends CordovaPlugin {
 		final int mHour = hour == -1 ? c.get(Calendar.HOUR_OF_DAY) : hour;
 		final int mMinutes = min == -1 ? c.get(Calendar.MINUTE) : min;
 
-		final long minDate = minDateLong;
-		final long maxDate = maxDateLong;
-		final String clearButtonText = clearText;
-
-	
-
 		if (ACTION_TIME.equalsIgnoreCase(action)) {
 			runnable = new Runnable() {
 				@Override
 				public void run() {
 					final TimeSetListener timeSetListener = new TimeSetListener(datePickerPlugin, callbackContext);
 					final TimePickerDialog timeDialog = new TimePickerDialog(currentCtx, timeSetListener, mHour,
-							mMinutes, false);
+							mMinutes, is24HourView);
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 						timeDialog.setCancelable(true);
 						timeDialog.setCanceledOnTouchOutside(false);
-						if (!clearButtonText.isEmpty()){
+						if (!clearText.isEmpty()){
 							
-	                        timeDialog.setButton(TimePickerDialog.BUTTON_NEUTRAL, clearButtonText, new DialogInterface.OnClickListener() {
+	                        timeDialog.setButton(TimePickerDialog.BUTTON_NEUTRAL, clearText, new DialogInterface.OnClickListener() {
 	                        	@Override
 	                            public void onClick(DialogInterface dialog, int which) {
 	                                // TODO Auto-generated method stub
