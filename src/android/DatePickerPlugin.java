@@ -109,9 +109,9 @@ public class DatePickerPlugin extends CordovaPlugin {
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 						timeDialog.setCancelable(true);
 						timeDialog.setCanceledOnTouchOutside(false);
-						if (!clearText.isEmpty()){
+						if (!clearButtonText.isEmpty()){
 							
-	                        timeDialog.setButton(TimePickerDialog.BUTTON_NEUTRAL, clearText, new DialogInterface.OnClickListener() {
+	                        timeDialog.setButton(TimePickerDialog.BUTTON_NEUTRAL, clearButtonText, new DialogInterface.OnClickListener() {
 	                        	@Override
 	                            public void onClick(DialogInterface dialog, int which) {
 	                                // TODO Auto-generated method stub
