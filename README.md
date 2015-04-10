@@ -41,105 +41,23 @@ datePicker.show(options, function(date){
 
 ## Options
 
-### mode - iOS, Android
-The mode of the date picker.
-
-Type: String
-
-Values: `date` | `time` | `datetime` (iOS only)
-
-Default: `date`
-
-### date - iOS, Android
-Selected date.
-
-Type: String
-
-Default: `new Date()`
-
-### minDate - iOS, Android
-Minimum date.
-
-Type: Date | empty String
-
-Default: `(empty String)`
-
-minDate is a Date object for iOS and an integer for Android, so you need to account for that when using the plugin.
-
-
-### maxDate - iOS, Android
-Maximum date.
-
-Type: Date | empty String
-
-Default: `(empty String)` 
-
-### allowOldDates - iOS
-Shows or hide dates earlier then selected date.
-
-Type: Boolean
-
-Values: `true` | `false`
-
-Default: `true`
-
-### allowFutureDates - iOS
-Shows or hide dates after selected date.
-
-Type: Boolean
-
-Values: `true` | `false`
-
-Default: `true`
-
-### doneButtonLabel - iOS
-Label of done button.
-
-Typ: String
-
-Default: `Done`
-
-### doneButtonColor - iOS
-Hex color of done button.
-
-Typ: String
-
-Default: `#0000FF`
-
-### cancelButtonLabel - iOS
-Label of cancel button.
-
-Type: String
-
-Default: `Cancel`
-
-### cancelButtonColor - iOS
-Hex color of cancel button.
-
-Type: String
-
-Default: `#000000`
-
-### x - iOS (iPad only)
-X position of date picker. The position is absolute to the root view of the application.
-
-Type: String
-
-Default: `0`
-
-### y - iOS (iPad only)
-Y position of date picker. The position is absolute to the root view of the application.
-
-Type: String
-
-Default: `0`
-
-### minuteInterval - iOS
-Interval between options in the minute section of the date picker.
-
-Type: Integer
-
-Default: `1`
+| JS option         	| Description                                                                              	| Type                  	| Options                           	| Default value 	| Supported Plattforms 	|
+|-------------------	|------------------------------------------------------------------------------------------	|-----------------------	|-----------------------------------	|---------------	|----------------------	|
+| mode              	| The mode of the date picker.                                                             	| String                	| date | time | datetime (ios only) 	| date          	| ios, android         	|
+| date              	| Selected date.                                                                           	| String                	|                                   	| new Date()    	| ios, android         	|
+| minDate           	| Minimum date                                                                             	| Date | empty String   	|                                   	|               	| ios, android         	|
+| maxDate           	| Maximum date                                                                             	| Date | empty String   	|                                   	|               	| ios, android         	|
+| clearText         	| If set, a clear button will be shown. Else it is hidden.                                 	| String | empty String 	|                                   	|               	| android (tested)     	|
+| is24HourView      	| If date should be shown as 24 hour view                                                  	| boolean               	|                                   	| true          	| android (tested)     	|
+| doneButtonLabel   	| Label of done button.                                                                    	| String                	|                                   	| Done          	| ios                  	|
+| doneButtonColor   	| Hex color of done button.                                                                	| String                	|                                   	| #0000FF       	| ios                  	|
+| cancelButtonLabel 	| Label of cancel button.                                                                  	| String                	|                                   	| Cancel        	| ios                  	|
+| cancelButtonColor 	| Hex color of cancel button.                                                              	| String                	|                                   	| #000000       	| ios                  	|
+| x                 	| X position of date picker. The position is absolute to the root view of the application. 	| String                	|                                   	| 0             	| ios                  	|
+| y                 	| Y position of date picker. The position is absolute to the root view of the application. 	| String                	|                                   	| 0             	| ios                  	|
+| minuteInterval    	| Interval between options in the minute section of the date picker.                       	| Integer               	|                                   	| 1             	| ios                  	|
+| allowOldDates     	| Shows or hide dates earlier then selected date.                                          	| Boolean               	|                                   	| true          	| ios                  	|
+| allowFutureDates  	| Shows or hide dates after selected date.                                                 	| Boolean               	|                                   	| true          	| ios                  	|
 
 ## Requirements
 - PhoneGap 3.0 or newer / Cordova 3.0 or newer
