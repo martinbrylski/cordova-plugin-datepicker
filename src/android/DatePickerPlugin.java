@@ -79,8 +79,8 @@ public class DatePickerPlugin extends CordovaPlugin {
 			hour = Integer.parseInt(datePart[3]);
 			min = Integer.parseInt(datePart[4]);
 
-			minDate = obj.getLong("minDate");
-			maxDate = obj.getLong("maxDate");
+			minDateLong = obj.getLong("minDate");
+			maxDateLong = obj.getLong("maxDate");
 
 			clearText = obj.getString("clearText");
 			is24HourView = obj.getBoolean("is24HourView");
@@ -98,6 +98,7 @@ public class DatePickerPlugin extends CordovaPlugin {
 		final long minDate = minDateLong;
 		final long maxDate = maxDateLong;
 		final String clearButtonText = clearText;
+		final boolean is24Hour = is24HourView;
 
 		if (ACTION_TIME.equalsIgnoreCase(action)) {
 			runnable = new Runnable() {
@@ -105,7 +106,7 @@ public class DatePickerPlugin extends CordovaPlugin {
 				public void run() {
 					final TimeSetListener timeSetListener = new TimeSetListener(datePickerPlugin, callbackContext);
 					final TimePickerDialog timeDialog = new TimePickerDialog(currentCtx, timeSetListener, mHour,
-							mMinutes, is24HourView);
+							mMinutes, is24Hour);
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 						timeDialog.setCancelable(true);
 						timeDialog.setCanceledOnTouchOutside(false);
