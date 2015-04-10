@@ -1,11 +1,15 @@
 # DatePicker Plugin for Cordova/PhoneGap 3.0 (iOS and Android)
 
-This fork utilizes 24 hour support.
-
 This is a combined version of DatePicker iOS and Android plugin for Cordova/Phonegap 3.0.
 - Original iOS version: https://github.com/sectore/phonegap3-ios-datepicker-plugin
 
 - Original Android version: https://github.com/bikasv/cordova-android-plugins/tree/master/datepicker
+
+## Changes
+
+- uses 24 hour format per default, is also settable by js option (`is24HourView`)
+- uses up-to-date theme for date and time picker on android (default to the light theme)
+- if js option `clearText` is set to an empty string, it will not be shown in the dialog
 
 ## Installation
 
