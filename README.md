@@ -1,5 +1,7 @@
 # DatePicker Plugin for Cordova/PhoneGap 3.0 (iOS and Android)
 
+This fork utilizes 24 hour support.
+
 This is a combined version of DatePicker iOS and Android plugin for Cordova/Phonegap 3.0.
 - Original iOS version: https://github.com/sectore/phonegap3-ios-datepicker-plugin
 

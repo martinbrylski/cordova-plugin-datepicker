@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.plugin.datepicker"
-    version="0.5.1">
+    version="0.6.0">
 
     <name>DatePicker</name>
 
@@ -13,7 +13,7 @@
 
     <keywords>cordova,phonegap,datepicker,android,ios,ios7,ios8</keywords>
 
-    <repo>https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git</repo>
+    <repo>https://github.com/martinbrylski/cordova-plugin-datepicker.git</repo>
 
     <!-- android -->
     <platform name="android">
