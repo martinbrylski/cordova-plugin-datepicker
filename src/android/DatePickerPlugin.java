@@ -63,7 +63,7 @@ public class DatePickerPlugin extends CordovaPlugin {
 		String clearText = "Clear";
 		boolean is24HourView = true;
 	
-		long minDate = 0, maxDate = 0;
+		long minDateLong = 0, maxDateLong = 0;
 		
 		int month = -1, day = -1, year = -1, hour = -1, min = -1;
 		try {
@@ -94,6 +94,10 @@ public class DatePickerPlugin extends CordovaPlugin {
 		final int mDay = day == -1 ? c.get(Calendar.DAY_OF_MONTH) : day;
 		final int mHour = hour == -1 ? c.get(Calendar.HOUR_OF_DAY) : hour;
 		final int mMinutes = min == -1 ? c.get(Calendar.MINUTE) : min;
+
+		final long minDate = minDateLong;
+		final long maxDate = maxDateLong;
+		final String clearButtonText = clearText;
 
 		if (ACTION_TIME.equalsIgnoreCase(action)) {
 			runnable = new Runnable() {
